@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby '2.7.5'
+
 gem 'rails',      '6.1.4.6'
 gem 'puma',       '5.3.1'
 gem 'sass-rails', '6.0.0'
@@ -27,4 +29,11 @@ group :test do
   gem 'webdrivers',         '4.6.0'
 end
 
-# gem  'tzinfo-data' ,  platforms :  [ :mingw ,  :mswin ,  :x64_mingw ,  :jruby ]
+group :production do
+  gem 'pg', '1.2.3'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# Uncomment the following line if you're running Rails
+# on a native Windows system:
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
